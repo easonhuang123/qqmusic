@@ -1,86 +1,73 @@
 <template>
-    <div>
-        <header>
-            <div class='header__main'>
-                <img class='header__logo' src='http://y.gtimg.cn/mediastyle/yqq/img/logo.png?nowebp=1'>
-                <ul class='header__mainnav'>
-                    <li class='header__mainnav__first'>音乐馆</li>
-                    <li>我的音乐</li>
-                    <li>客户端</li>
-                    <li>音乐号</li>
-                    <li>VIP</li>
-                </ul>
-                <div class='header__search'>
-                    <div class="header__search__main" @mouseout="fade" >
-                        <input type="text" placeholder='梦想的声音第二季' @focus="hot = true" @blur='hot = false' ref='input'>
-                        <button class='iconfont icon-sousuo' ></button>
+    <header>
+        <div class='header__main'>
+            <img class='header__logo' src='http://y.gtimg.cn/mediastyle/yqq/img/logo.png?nowebp=1'>
+            <ul class='header__mainnav'>
+                <li class='header__mainnav__first'>音乐馆</li>
+                <li>我的音乐</li>
+                <li>客户端</li>
+                <li>音乐号</li>
+                <li>VIP</li>
+            </ul>
+            <div class='header__search'>
+                <div class="header__search__main">
+                    <input type="text" placeholder='梦想的声音第二季' @focus="hot = true" @blur='hot = false' ref='input'>
+                    <button class='iconfont icon-sousuo' ></button>
+                </div>
+                <transition name='hot'>
+                    <div class='header__search__hot' v-show="hot">
+                        <ul>
+                            <li>
+                                <span class='header__search__hot__num'>1</span>
+                                <span class='header__search__hot__name'>无条件</span>
+                                <span class='header__search__hot__count'>8.5万</span>
+                            </li>
+                            <li>
+                                <span class='header__search__hot__num'>1</span>
+                                <span class='header__search__hot__name'>无条件</span>
+                                <span class='header__search__hot__count'>8.5万</span>
+                            </li>
+                            <li>
+                                <span class='header__search__hot__num'>1</span>
+                                <span class='header__search__hot__name'>无条件</span>
+                                <span class='header__search__hot__count'>8.5万</span>
+                            </li>
+                            <li>
+                                <span class='header__search__hot__num'>1</span>
+                                <span class='header__search__hot__name'>无条件</span>
+                                <span class='header__search__hot__count'>8.5万</span>
+                            </li>
+                        </ul>
                     </div>
-                    <transition name='hot'>
-                        <div class='header__search__hot' v-show="hot">
-                            <ul>
-                                <li>
-                                    <span class='header__search__hot__num'>1</span>
-                                    <span class='header__search__hot__name'>无条件</span>
-                                    <span class='header__search__hot__count'>8.5万</span>
-                                </li>
-                                <li>
-                                    <span class='header__search__hot__num'>1</span>
-                                    <span class='header__search__hot__name'>无条件</span>
-                                    <span class='header__search__hot__count'>8.5万</span>
-                                </li>
-                                <li>
-                                    <span class='header__search__hot__num'>1</span>
-                                    <span class='header__search__hot__name'>无条件</span>
-                                    <span class='header__search__hot__count'>8.5万</span>
-                                </li>
-                                <li>
-                                    <span class='header__search__hot__num'>1</span>
-                                    <span class='header__search__hot__name'>无条件</span>
-                                    <span class='header__search__hot__count'>8.5万</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </transition>
-                </div>
-                <div class='header__button'>
-                    <button class='header__login'>登录</button>
-                    <button class='header__vip'>开通绿钻豪华版</button>
-                    <button class='header__pay'>开通付费包</button>
-                </div>
+                </transition>
             </div>
-            <!-- <div class='header__sub'>
-                <ul class='header__subnav'>
-                    <li>首页</li>
-                    <li>歌手</li>
-                    <li>专辑</li>
-                    <li>排行榜</li>
-                    <li>分类歌单</li>
-                    <li>电台</li>
-                    <li>MV</li>
-                    <li>数字专辑</li>
-                </ul>
-            </div> -->
-        </header>
-        <div></div>
-        <footer></footer>
-    </div>
+            <div class='header__button'>
+                <button class='header__login'>登录</button>
+                <button class='header__vip'>开通绿钻豪华版</button>
+                <button class='header__pay'>开通付费包</button>
+            </div>
+        </div>
+        <div class='header__sub'>
+            <ul class='header__subnav'>
+                <li>首页</li>
+                <li>歌手</li>
+                <li>专辑</li>
+                <li>排行榜</li>
+                <li>分类歌单</li>
+                <li>电台</li>
+                <li>MV</li>
+                <li class='header__sublast'>数字专辑</li>
+            </ul>
+        </div>
+    </header>
 </template>
 
 <script>
 export default {
-    name: 'Home',
+    name: 'homeheader',
     data () {
         return {
             hot: false
-        }
-    },
-    mounted () {
-    },
-    methods: {
-        fade () {
-            if (document.body.clientWidth <= '1160') {
-                this.$refs.input.blur()
-            }
         }
     }
 }
@@ -285,6 +272,29 @@ header{
         }
     }
 
+    .header__sub{
+        margin-left: 50px;
+        .header__subnav{
+            margin-left: 230px;
+            height: 51px;
+            line-height: 51px;
+            cursor: pointer;
+            li{
+                display: inline-block;
+                margin-right: 44px;
+                color: #333;
+                font-size: 15px;
+                &:hover{
+                    color:#31c27c;
+                }
+            }
+            .header__sublast{
+                margin-right: -50px;
+            }
+        }
+    }
+
+
     .hot-enter-active {
         transition: all .5s ease
     }
@@ -296,5 +306,3 @@ header{
     }
 }
 </style>
-
-

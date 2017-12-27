@@ -30,4 +30,14 @@ export default {
 .section_bg{
     background: url(../../assets/bg_detail.jpg) 50% 0 repeat-x;
 }
+.section{
+    width: 100%;
+    .section__body{
+        margin: 0 50px;
+        .section__title{
+            text-align: center;
+            
+        }
+    }
+}
 </style>

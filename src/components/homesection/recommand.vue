@@ -2,6 +2,7 @@
     <div>
         <div class='section__playlist__imgbox'>
             <img class='section__playlist__img' :src="item.src" alt="">
+            <i class='section__playlist__mask'></i>
             <i class='section__playlist__play'></i>
         </div>
         <h4 class='section__playlist__title'>{{item.title}}</h4>
@@ -32,11 +33,41 @@ export default {
         width: 100%;
         transform: scale(1);
         transition: transform .75s;
-        &:hover {
+    }
+    .section__playlist__mask{
+        position: absolute;
+        top: 0; bottom: 0; right: 0; left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all .5s;
+    }
+    .section__playlist__play{
+        position: absolute;
+        top:50%;
+        left:50%;
+        width: 70px;
+        height: 70px;
+        background-image: url('../../assets/cover_play.png');
+        transform: translate(-50%,-50%) scale(0.5);
+        opacity: 0;
+        transition: all .75s;
+    }
+    &:hover {
+        .section__playlist__img{
             transform: scale(1.07);
             transition: transform .75s cubic-bezier(0,1,0.75,1);
         }
-    }  
+        .section__playlist__mask{
+            background-color: #333;
+            opacity: 0.2;
+            transition: all .75s;
+        }
+        .section__playlist__play{
+            transform: translate(-50%,-50%) scale(1);
+            opacity: 1;
+            transition: all .75s cubic-bezier(0,1,0.75,1);
+        }
+    }
 }
 .section__playlist__title{
     font-size: 14px;

@@ -2,6 +2,8 @@
     <div>
         <homeheader></homeheader>
         <homesection></homesection>
+        <homesection></homesection>
+        <homesection></homesection>
         <footer></footer>
     </div>
 </template>

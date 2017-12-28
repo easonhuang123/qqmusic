@@ -86,7 +86,7 @@ export default {
                     
                     {
                         src: 'https://p.qpic.cn/music_cover/ibSiagqKjw1zfTgxY7F8CfE1dqXGAzzrA74s5eNwicVrvkv0tgvuyP3uw/300?n=1',
-                        title: '每日新歌：彭昱畅×孙雪宁诠释《爱刚刚好》 ',
+                        title: '每日新歌：彭昱畅×孙雪宁诠释《爱刚刚好》',
                         sum: '播放量：96.6万'
                     },
                     {
@@ -237,13 +237,14 @@ export default {
             min-width: 900px;
             .section__playlist__box{
                 position: relative;
-                width: 401.7%;
+                width: 405.7%;
                 left: -200%;
                 .section__playlist__list{
                     list-style: none;
                     display: inline-block;
                     width: 24.8%;
                     .section__playlist__inline_list{
+                        vertical-align:top;
                         list-style: none;
                         display: inline-block;
                         width: 17.3%;

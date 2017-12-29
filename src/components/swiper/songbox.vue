@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: 'recommand',
+    name: 'songbox',
     props: [ 'item' ]
 }
 </script>
@@ -58,7 +58,7 @@ export default {
             transition: transform .75s cubic-bezier(0,1,0.75,1);
         }
         .section__playlist__mask{
-            background-color: #333;
+            background-color: #000;
             opacity: 0.2;
             transition: all .75s;
         }

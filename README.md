@@ -1,30 +1,25 @@
-# vue-template
+## 基于vue实现的QQ音乐web端网站 ##
 
-> a vue+vuex+vue-router+webpack templaterouter
+### demo演示
+![演示图](src/assets/show.png)
 
-## Build Setup
+[在线演示](https://easonhuang123.github.io/qqmusic/dist/index.html
+)
 
-``` bash
-# install dependencies
-npm install
+### 内容分析
+- 头部
+    - 导航
+    - 搜索框
+    - 登录
+- 主体
+    - 推荐歌单
+    - 新歌首发
+    - 精彩推荐
+    - 新碟首发
+    - 排行榜
+    - mv
+- 尾部
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 重点学习内容
+- 头部搜索框
+- 主体轮播器组件封装

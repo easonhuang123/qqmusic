@@ -81,6 +81,7 @@ export default {
             this.list_active = index
             this.$emit('changeList', index)
             this.position = -100
+            this.$refs.list.style.transition = 'none'
             this.$refs.list.style.left = `${this.position}%`
         }
     }

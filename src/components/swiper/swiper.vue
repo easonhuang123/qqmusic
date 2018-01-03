@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import songbox from './songbox.vue'
 export default {
     name: 'swiper',
     data () {
@@ -51,7 +50,6 @@ export default {
         }
     },
     props: [ 'main' ],
-    components: { songbox },
     mounted () {
         console.log(this.main)
     },
@@ -135,20 +133,6 @@ export default {
                 width: 1250%;
                 left: -100%;
                 margin-left: 11px;
-                .section__playlist__list{
-                    position: relative;
-                    list-style: none;
-                    display: inline-block;
-                    width: 8%;
-                    .section__playlist__inline_list{
-                        position: relative;
-                        vertical-align:top;
-                        list-style: none;
-                        display: inline-block;
-                        width: 17.3%;
-                        margin: 0 1.1%;
-                    }
-                }
             }
         }
         .section__switch{

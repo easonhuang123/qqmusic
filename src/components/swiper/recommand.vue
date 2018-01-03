@@ -12,13 +12,14 @@
 
 <script>
 export default {
-    name: 'songbox',
+    name: 'recommand',
     props: [ 'item' ]
 }
 </script>
 
 <style lang="less">
 .section__playlist__imgbox{
+    cursor: pointer;
     position: relative;
     margin-bottom: 15px;
     overflow: hidden;

@@ -161,6 +161,7 @@ header{
                 width: 218px;
                 border: 1px solid #c9c9c9;
                 margin-top: -5px;
+                z-index: 3;
                 li{
                     list-style:none;  
                     padding: 0 11px;

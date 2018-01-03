@@ -28,11 +28,11 @@
                 </ul>
             </li>
         </swiper>
-        <swiper :main='recommand' @changeList='changeList'>
-            <li class='swiper__list' v-for="(item, index) in currItems" :key="index">
+        <swiper :main='album' @changeList='changeList'>
+            <li class='swiper__list' v-for="(items, index) in album_list[0]" :key="index">
                 <ul>
-                    <li class='recommand__inline__list' v-for="(i, idx) in item" :key="idx">
-                        <recommand :item='i'></recommand>
+                    <li class='album__inline__list' v-for="(item, idx) in items" :key="idx">
+                        <album :item='i' v-for="(i, idx_) in item" :key="idx_"></album>
                     </li>
                 </ul>
             </li>
@@ -44,9 +44,7 @@
 <script>
 import Data from '@/data/data'
 import homeheader from '@/components/homeheader'
-import swiper from '@/components/swiper'
-import recommand from '@/components/swiper/recommand'
-import newsong from '@/components/swiper/newsong'
+import { swiper, newsong, recommand, album } from '@/components/swiper'
 
 export default {
     name: 'Home',
@@ -70,9 +68,15 @@ export default {
                 list: [],
                 pages: [ 5 ]
             },
+            album: {
+                title: '新碟首发',
+                list: [ '内地', '港台', '欧美', '日本', '韩国' ],
+                pages: [ 6, 6, 6, 6, 6 ]
+            },
             recommand_list: Data.recommand_list,
             newsong_list: Data.newsong_list,
             awesome_list: Data.awesome_list,
+            album_list: Data.album_list,
             currItems: []
         }
     },
@@ -86,7 +90,7 @@ export default {
             this.currItems = this.recommand_list[index]
         }
     },
-    components: { homeheader, swiper, recommand, newsong }
+    components: { homeheader, swiper, recommand, newsong, album }
 }
 </script>
 
@@ -122,6 +126,14 @@ export default {
             width: 100%;
             cursor: pointer;
         }
+    }
+    .album__inline__list{
+        position: relative;
+        vertical-align: top;
+        list-style: none;
+        display: inline-block;
+        width: 18.5%;
+        margin-right:1.5%;
     }
 }
 </style>

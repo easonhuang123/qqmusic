@@ -2,7 +2,7 @@
     <div>
         <homeheader></homeheader>
         <swiper :main='recommand' @changeList='changeList'>
-            <li class='recommand__list' v-for="(item, index) in currItems" :key="index">
+            <li class='swiper__list' v-for="(item, index) in currItems" :key="index">
                 <ul>
                     <li class='recommand__inline__list' v-for="(i, idx) in item" :key="idx">
                         <recommand :item='i'></recommand>
@@ -10,11 +10,29 @@
                 </ul>
             </li>
         </swiper>
-         <swiper :main='newsong' @changeList='changeList2'>
-            <li class='newsong__list' v-for="(items, index) in newsong_list[0]" :key="index">
+        <swiper :main='newsong' @changeList='changeList2'>
+            <li class='swiper__list' v-for="(items, index) in newsong_list[0]" :key="index">
                 <ul>
                     <li class='newsong__inline__list' v-for="(item, idx) in items" :key="idx">
                         <newsong :item='i' v-for="(i, idx_) in item" :key="idx_"></newsong>
+                    </li>
+                </ul>
+            </li>
+        </swiper>
+        <swiper :main='awesome' @changeList='changeList3'>
+            <li class='swiper__list' v-for="(item, index) in awesome_list[0]" :key="index">
+                <ul>
+                    <li class='awesome__inline__list' v-for="(i, idx) in item" :key="idx">
+                        <img :src='i.src'>
+                    </li>
+                </ul>
+            </li>
+        </swiper>
+        <swiper :main='recommand' @changeList='changeList'>
+            <li class='swiper__list' v-for="(item, index) in currItems" :key="index">
+                <ul>
+                    <li class='recommand__inline__list' v-for="(i, idx) in item" :key="idx">
+                        <recommand :item='i'></recommand>
                     </li>
                 </ul>
             </li>
@@ -47,8 +65,14 @@ export default {
                 list: [ '为你推荐', '内地', '港台', '欧美', '日本', '韩国' ],
                 pages: [ 6, 6, 6, 6, 6, 6 ]
             },
+            awesome: {
+                title: '精彩推荐',
+                list: [],
+                pages: [ 5 ]
+            },
             recommand_list: Data.recommand_list,
             newsong_list: Data.newsong_list,
+            awesome_list: Data.awesome_list,
             currItems: []
         }
     },
@@ -67,7 +91,7 @@ export default {
 </script>
 
 <style lang="less">
-.recommand__list{
+.swiper__list{
     position: relative;
     list-style: none;
     display: inline-block;
@@ -77,21 +101,27 @@ export default {
         vertical-align:top;
         list-style: none;
         display: inline-block;
-        width: 17.3%;
-        margin: 0 1.1%;
+        width: 18.5%;
+        margin-right:1.5%;
     }
-}
-.newsong__list{
-    position: relative;
-    list-style: none;
-    display: inline-block;
-    width: 8%;
     .newsong__inline__list{
         position: relative;
         vertical-align:top;
         list-style: none;
         display: inline-block;
         width: 33.3%;
+    }
+    .awesome__inline__list{
+        box-sizing: border-box;
+        padding-right: 20px;
+        display: inline-block;
+        width: 50%;
+        img{
+            position: relative;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
     }
 }
 </style>

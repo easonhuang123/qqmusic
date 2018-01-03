@@ -1308,5 +1308,49 @@ export default {
                 ]
             ]
         ]
+    ],
+    awesome_list: [
+        [
+            [
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/230705.jpg'
+                },
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/231121.jpg'
+                }
+            ],
+            [
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/231165.jpg'
+                },
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/231059.jpg'
+                }
+            ],
+            [
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/230051.jpg'
+                },
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/230985.jpg'
+                }
+            ],
+            [
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/230705.jpg'
+                },
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/231121.jpg'
+                }
+            ],
+            [
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/231165.jpg'
+                },
+                {
+                    src: 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/231059.jpg'
+                }
+            ]
+        ]
     ]
 }

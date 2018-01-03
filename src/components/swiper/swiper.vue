@@ -2,7 +2,7 @@
     <div class='section section_bg' @mouseover="slide_btn_show=true" @mouseout="slide_btn_show=false">
         <div class='section__body'>
             <h1 class='section__title'>{{main.title}}</h1>
-            <ul class='section__tab'>
+            <ul class='section__tab' v-if='main.list.length !== 0'>
                 <li :class='{section__tab__active: list_active === index}'
                     v-for='(item, index) in main.list'
                     :key='item'
@@ -10,6 +10,7 @@
                     {{item}}
                 </li>
             </ul>
+            <button class='playall' v-if="main.title === '新歌首发'">播放全部</button>
             <div class='section__playlist'>
                 <ul class='section__playlist__box' ref='list'>
                     <slot></slot>
@@ -95,6 +96,7 @@ export default {
     color: #333;
     width: 100%;
     .section__body{
+        position: relative;
         max-width: 1300px;
         min-width: 1000px;
         margin: 0 auto;
@@ -122,6 +124,27 @@ export default {
             .section__tab__active{
                 color: #31c27c;
             }
+        }
+        .playall{
+            position: absolute;
+            left: 10px;
+            margin: -50px 50px 0;
+            background: inherit;
+            &:hover{
+                cursor: pointer;
+                background-color: rgb(228, 228, 228);
+            }
+            color: #333;
+            border: 1px solid #c9c9c9;
+            border-radius: 2px;
+            font-size: 14px;
+            padding: 0 23px;
+            height: 38px;
+            line-height: 38px;
+            display: inline-block;
+            white-space: nowrap;
+            box-sizing: border-box;
+            overflow: hidden;
         }
         .section__playlist{
             position: relative;

@@ -1,3 +1,3 @@
-import ranking from './ranking'
+import ranklist from './ranklist'
 
-export default ranking
+export default ranklist

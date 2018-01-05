@@ -1,6 +1,6 @@
 <template>
     <div>
-        <homeheader></homeheader>
+        <Header></Header>
         <swiper :main='recommand' @changeList='changeList'>
             <li class='swiper__list' v-for="(item, index) in currItems" :key="index">
                 <ul>
@@ -43,7 +43,7 @@
 
 <script>
 import Data from '@/data/data'
-import homeheader from '@/components/homeheader'
+import Header from '@/components/header'
 import { swiper, newsong, recommand, album } from '@/components/swiper'
 
 export default {
@@ -90,7 +90,7 @@ export default {
             this.currItems = this.recommand_list[index]
         }
     },
-    components: { homeheader, swiper, recommand, newsong, album }
+    components: { Header, swiper, recommand, newsong, album }
 }
 </script>
 

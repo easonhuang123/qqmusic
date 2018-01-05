@@ -64,7 +64,7 @@
 
 <script>
 export default {
-    name: 'homeheader',
+    name: 'header',
     data () {
         return {
             hot: false
@@ -303,7 +303,8 @@ header{
         transition: all .5s ease 1s
     }
     .hot-enter, .hot-leave-to /* .fade-leave-active in below version 2.1.8 */ {
-        transform: scaleY(0);
+        transform: translateY(20px);
+        opacity: 0;
     }
 }
 </style>

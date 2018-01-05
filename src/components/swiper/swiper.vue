@@ -2,6 +2,7 @@
     <div class='section section_bg' @mouseover="slide_btn_show=true" @mouseout="slide_btn_show=false">
         <div class='section__body'>
             <h1 class='section__title'>{{main.title}}</h1>
+            <a class='more' v-if="main.title === '新碟首发'">更多 > </a>
             <ul class='section__tab' v-if='main.list.length !== 0'>
                 <li :class='{section__tab__active: list_active === index}'
                     v-for='(item, index) in main.list'
@@ -105,6 +106,14 @@ export default {
             letter-spacing: 10px;
             text-align: center;
             padding: 4.16667% 0 2%;
+        }
+        .more{
+            position: absolute;
+            right: 10px;
+            margin: -50px 50px 0;
+            &:hover{
+                color: #31c27c;
+            }
         }
         .section__tab{
             height: 50px;

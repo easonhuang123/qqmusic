@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions'
 import Header from './header.vue'
 import barrage from './barrage.vue'
 import rank from './rank.vue'
+import drag from './draggable.vue'
 
 storiesOf('Header', module)
     .add('story as a component', () => ({
@@ -24,3 +25,9 @@ storiesOf('rank', module)
         components: { rank },
         template: "<rank></rank>"
     }))
+
+storiesOf('drag', module)
+    .add('story as a component', () => ({
+        components: { drag },
+        template: "<drag></drag>"
+    }))    

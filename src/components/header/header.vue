@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <div class='headerNav'>
         <div class='header__main'>
             <img class='header__logo' src='http://y.gtimg.cn/mediastyle/yqq/img/logo.png?nowebp=1'>
             <ul class='header__mainnav'>
@@ -59,12 +59,12 @@
                 <li class='header__sublast'>数字专辑</li>
             </ul>
         </div>
-    </header>
+    </div>
 </template>
 
 <script>
 export default {
-    name: 'header',
+    name: 'headerNav',
     data () {
         return {
             hot: false
@@ -75,7 +75,7 @@ export default {
 
 <style lang="less">
 @import url('//at.alicdn.com/t/font_bne2hp94ahh0k9.css');
-header{
+.headerNav{
     position: relative;
     margin: 0 auto;
     max-width: 1300px;

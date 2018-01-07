@@ -1,42 +1,49 @@
 <template>
     <div class='rank'>
-        <div class='rank__bg'></div>
+        <div class='rank__bg' ref='background'></div>
         <div class='rank__title'>
             <h4 class='rank__top'>巅峰榜</h4>
-            <h3 class='rank__type'>流行指数</h3>
+            <h3 class='rank__type'>{{item.type}}</h3>
         </div>
         <i class='rank__play'></i>
         <i class='rank__line'></i>
         <ul class='rank__ul'>
-            <li class='rank__li'>
-                <div class='rank__num'>1</div>
-                <div class='rank__song'>说散就散</div>
-                <div class='rank__author'>袁娅维</div>
-            </li>
-            <li class='rank__li'>
-                <div class='rank__num'>1</div>
-                <div class='rank__song'>说散就散</div>
-                <div class='rank__author'>袁娅维</div>
-            </li>
-            <li class='rank__li'>
-                <div class='rank__num'>1</div>
-                <div class='rank__song'>说散就散</div>
-                <div class='rank__author'>袁娅维</div>
-            </li>
-            <li class='rank__li'>
-                <div class='rank__num'>1</div>
-                <div class='rank__song'>说散就散</div>
-                <div class='rank__author'>袁娅维</div>
+            <li class='rank__li' v-for="(list, index) in item.list" :key='index'>
+                <div class='rank__num'>{{list.num}}</div>
+                <div class='rank__song'>{{list.name}}</div>
+                <div class='rank__author'>{{list.author}}</div>
             </li>
         </ul>
     </div>
 </template>
 
+<script>
+export default {
+    name: 'rank',
+    props: [ 'item' ],
+    mounted () {
+        switch (this.item.type) {
+            case '流行指数': this.$refs.background.style.backgroundPosition = '0 0'
+                break
+            case '热歌': this.$refs.background.style.backgroundPosition = '-224px 0'
+                break
+            case '新歌': this.$refs.background.style.backgroundPosition = '-448px 0'
+                break
+            case '欧美': this.$refs.background.style.backgroundPosition = '-672px 0'
+                break
+            case '韩国': this.$refs.background.style.backgroundPosition = '-896px 0'
+                break
+        }
+    }
+}
+</script>
+
+
 <style lang="less" scoped>
 .rank{
     position: relative;
     height: 500px;
-    width: 180px;
+    margin-right:20px;
     overflow: hidden;
     color: #fff;
     &:hover{
@@ -62,12 +69,12 @@
     .rank__title{
         width: 200px;
         position: absolute;
-        top: 1%;
+        top: 7%;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
         .rank__top{
-            font-size: 25px;
+            font-size: 22px;
             font-weight: 100;
             margin-bottom: 0;
         }

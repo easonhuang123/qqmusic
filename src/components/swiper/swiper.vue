@@ -52,9 +52,6 @@ export default {
         }
     },
     props: [ 'main' ],
-    mounted () {
-        console.log(this.main)
-    },
     methods: {
         // 点击下面的小点点切换
         select (index) {

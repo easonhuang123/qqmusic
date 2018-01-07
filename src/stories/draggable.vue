@@ -1,6 +1,6 @@
 <template>
 <div>
-    <draggable v-model="myArray" :options="{group:'people'}" @start="drag=true" @end="drag=false">
+    <draggable v-model="myArray" :options="{group:'people',forceFallback:true}" @start="drag=true" @end="drag=false">
         <div class='box' v-for="element in myArray" :key="element.id">{{element.name}}</div>
     </draggable>
 </div>
